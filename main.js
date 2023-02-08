@@ -12,8 +12,8 @@ const optionElements = document.querySelectorAll(".option");
 const question = document.getElementById("question");
 
 const numberOfQuestion = document.getElementById(
-    "number-of-questions"
-  ) /*номер вопроса*/,
+    "number-of-question"
+  ) ;/*номер вопроса*/
   numberOfAllQuestions = document.getElementById(
     "number-of-all-questions"
   ); /*кол-во всех вопросов*/
@@ -34,18 +34,18 @@ const correctAnswer = document.getElementById("correct-answer"), // кол-во 
 
 const questions = [
   {
-    question: "Сколько на данный момент существует языков программирования?",
-    options: ["Около 200", "Около 500", "Чуть более 1000", "Более 8000"],
+    question: "How many programming languages are currently available??",
+    options: ["About 200", "About 500", "Just over 1000", "Over 8000"],
     rightAnswer: 3, //правильный ответ
   },
   {
-    question: "Является ли язык программирования С++ объектно-ориентированным?",
-    options: ["Да", "Нет", "Может быть", "Не знаю"],
+    question: "Is the C++ programming language object-oriented?",
+    options: ["Yes", "No", "Maybe", "I don't know"],
     rightAnswer: 0,
   },
   {
-    question: "Столица Польши?",
-    options: ["Люблин", "Краков", "Варшава", "Гданськ"],
+    question: "The capital of Poland?",
+    options: ["Lublin", "Krakow", "Warsaw", "Gdansk"],
     rightAnswer: 2,
   },
 ];
@@ -59,7 +59,8 @@ const load = () => {
   option3.innerHTML = questions[indexOfQuestion].options[2];
   option4.innerHTML = questions[indexOfQuestion].options[3];
 
-  numberOfAllQuestions.innerHTML = indexOfPage + 1; //установка номера текущей страницы
+
+  numberOfQuestion.innerHTML = indexOfPage + 1; //установка номера текущей страницы
   indexOfPage++; //увеличение индкса страницы
 };
 
@@ -67,7 +68,7 @@ let completedAnswers = []; //массив для заданныз вопросо
 
 const randomQuestion = () => {
   let randomNumber = Math.floor(Math.random() * questions.length);
-  let hitDuplicate = false; //якорь для проверки одинаковых вопросов
+  let hitDuplicate = false; // для проверки одинаковых вопросов
 
   if (indexOfPage == questions.length) {
     quizOver();
